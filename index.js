@@ -212,7 +212,22 @@ var row=""
 const uniquemeal=[...new Set(mealArray)]
 uniquemeal.map( data =>{
  row+=`<option value="${data}">${data}</option>`;
-})
+});
+
+let foundDishes = [];
+function selectmeal(){
+    let selectedmeal = document.getElementById('meals').value;
+    localStorage.setItem('selectedmeal',JSON.stringify(selectedmeal));
+
+    foundDishes = [];
+    dishes.map( (dish, ind, arr) => {
+        let mealInd = dish.availableMeals( (mealObj) => (mealObj === selectedmeal) );
+        if(mealInd > -1) {
+            foundDishes.push(dish);
+        }
+    });
+    localStorage.setItem('foundRestaurants', JSON.stringify(foundDishes));
+}
 
 document.getElementById("meals").innerHTML=row
 // console.log(mealArray,'meal')
