@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>restaurant menu</title>
+</head>
+
+<body>
+    <form action="#" class="form" onchange="submit">
+        <h1 class="text-center">Restaurant Menu</h1>
+
+		<table class="meal-info-table" hidden id="meal_table">
+			<tr>
+				<th>Meal</th>
+				<th id="meal_name"></th>
+			</tr>
+			<tr>
+				<th>No. Of People</th>
+				<th id="no_of_people"></th>
+			</tr>
+			<tr>
+				<th> selected Restaurant</th>
+				<th id="restaurant_name"></th>
+			<tr>
+                <th>selected dish</th>
+                <th id="dish_name"></th>
+            </tr>
+            <tr>
+                <th>no.of serving</th>
+                <th id="servings"></th>
+            </tr>
+            
+		</table>
+
+        <div class="progressbar">
+            <div class="progress" number="progress"></div>
+
+            <div class="progress-step progress-step-active" data-title="step1"></div>
+            <div class="progress-step" data-title="step2"></div>
+            <div class="progress-step" data-title="step3"></div>
+            
+        </div>
+
+
+
+        <div class="form-step form-step-active">
+            <div class="input-group">
+                <label for="meal">please select a meal</label>
+                <select onchange="selectmeal( )" type="text" name="meal" number="meal" id="meals"></select>
+            </div>
+            <div class="input-group">
+                <label for="position">please enter number of people</label>
+                <select type="text" name="position" number="position" id="position"><option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option></select>
+            </div>
+            <div class="">
+                <a href="#" id="next1" class="btn btn-next number-50 ml-auto">Next</a>
+            </div>
+        </div>
+        <div class="form-step">
+            <div class="input-group">
+                <label for="restaurant">please select a restaurant</label>
+                <select type="text" name="restaurant" number="restaurant" id="restaurant">
+            </select>
+            </div>
+
+            <div class="btns-group">
+                <a href="#" class="btn btn-prev">Previous</a>
+                <a href="#" id="next2" class="btn btn-next">Next</a>
+            </div>
+        </div>
+        <div class="form-step">
+            <div class="input-group">
+                <label for="text">please select a dish</label>
+               <select type="text" name="dish" id="dish">
+              </select>
+            </div>
+            <div class="input-group">
+                <label for="number">please enter no of serving</label>
+                <select type="number" name="number" number="number" id="serving"><option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option></select>
+            </div>
+            <div class="btns-group">
+                <a href="#" class="btn btn-prev">Previous</a>
+                <a href="#" class="btn btn-next" onclick="showOrderDetails(meal_table);">submit</a>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="index.js"  ></script>
+</html>
